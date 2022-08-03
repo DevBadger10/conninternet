@@ -19,6 +19,7 @@ color = Color( 0.141176, 0.392157, 0.745098, 1 )
 [node name="BigButtons" type="Node" parent="."]
 
 [node name="PlayButton" type="TextureButton" parent="BigButtons"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 448.0
 margin_top = 319.0
 margin_right = 464.0
@@ -28,6 +29,7 @@ action_mode = 0
 texture_normal = ExtResource( 1 )
 
 [node name="QuitButton" type="TextureButton" parent="BigButtons"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 448.0
 margin_top = 400.0
 margin_right = 464.0
@@ -37,6 +39,7 @@ action_mode = 0
 texture_normal = ExtResource( 1 )
 
 [node name="PlayText" type="RichTextLabel" parent="BigButtons"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 480.0
 margin_top = 335.0
 margin_right = 520.0
@@ -48,6 +51,7 @@ text = "Play"
 scroll_active = false
 
 [node name="QuitText" type="RichTextLabel" parent="BigButtons"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 480.0
 margin_top = 415.0
 margin_right = 520.0
@@ -61,6 +65,7 @@ scroll_active = false
 [node name="SmallButtons" type="Node" parent="."]
 
 [node name="InfoButton" type="TextureButton" parent="SmallButtons"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 448.0
 margin_top = 479.0
 margin_right = 456.0
@@ -70,6 +75,7 @@ action_mode = 0
 texture_normal = ExtResource( 4 )
 
 [node name="SettingButton" type="TextureButton" parent="SmallButtons"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 480.0
 margin_top = 479.0
 margin_right = 488.0
@@ -79,6 +85,7 @@ action_mode = 0
 texture_normal = ExtResource( 2 )
 
 [node name="ExtraSettingsButton" type="TextureButton" parent="SmallButtons"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 512.0
 margin_top = 479.0
 margin_right = 520.0
@@ -88,6 +95,7 @@ action_mode = 0
 texture_normal = ExtResource( 3 )
 
 [node name="CreditsButton" type="TextureButton" parent="SmallButtons"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 544.0
 margin_top = 479.0
 margin_right = 552.0
@@ -97,13 +105,15 @@ action_mode = 0
 texture_normal = ExtResource( 5 )
 
 [node name="Title" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 186.0
 margin_top = 95.0
-margin_right = 314.0
-margin_bottom = 126.0
+margin_right = 288.0
+margin_bottom = 107.0
 rect_scale = Vector2( 6.48, 6.48 )
 theme = ExtResource( 6 )
 text = "Conninternet"
+scroll_active = false
 
 [node name="InFront" type="CanvasLayer" parent="."]
 layer = 69
@@ -117,7 +127,7 @@ mouse_filter = 1
 color = Color( 0.141176, 0.392157, 0.745098, 0 )
 
 [node name="Wait" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 2.0
 
 [node name="Tweens" type="Node" parent="."]
 
