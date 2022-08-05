@@ -1,5 +1,7 @@
 extends Node2D
 
+onready var settings = null
+onready var err = null
 
 # I didn't know how to set the transparency of buttons before.
 
@@ -85,4 +87,22 @@ func fadeIn():
 		yield($Wait, "timeout")
 
 func _ready():
+	loadGlobal()
 	fadeIn()
+
+
+func loadGlobal():
+	settings = ConfigFile.new()
+	err = settings.load("user://settings.cfg") # I had forgot to change this from the deafult so it didnt work AAAAA
+	if err != OK:
+		return
+	print(settings.get_value("settings", "fullscreen"))
+	ProjectSettings.set_setting("Global/Fullscreen",settings.get_value("settings", "fullscreen"))
+	ProjectSettings.set_setting("Global/SFXVolume",settings.get_value("settings", "sfxvolume"))
+	ProjectSettings.set_setting("Global/MusicVolume",settings.get_value("settings", "musicvolume"))
+	ProjectSettings.set_setting("Global/ModPathToLoad",settings.get_value("extrasettings", "mod")) # I had forgot to change this to extrasettings.
+	setupSettings()
+
+func setupSettings():
+	OS.window_fullscreen = ProjectSettings.get_setting("Global/Fullscreen")
+	# Now do mod stuff!
