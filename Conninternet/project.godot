@@ -8,6 +8,13 @@
 
 config_version=4
 
+[Global]
+
+MusicVolume=0
+SFXVolume=0
+Fullscreen=false
+ModPathToLoad=""
+
 [application]
 
 config/name="Conninternet"
