@@ -10,10 +10,11 @@ config_version=4
 
 [Global]
 
-MusicVolume=0
-SFXVolume=0
+MusicVolume=100
+SFXVolume=100
 Fullscreen=false
-ModPathToLoad=""
+ModPathToLoad="res://testing.pck"
+Tutorial=false
 
 [application]
 
