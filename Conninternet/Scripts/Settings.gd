@@ -30,4 +30,9 @@ func save():
 	settings.set_value("settings", "musicvolume", ProjectSettings.get_setting("Global/MusicVolume"))
 	settings.set_value("settings", "sfxvolume", ProjectSettings.get_setting("Global/SFXVolume"))
 	settings.set_value("extrasettings", "mod", ProjectSettings.get_setting("Global/ModPathToLoad"))
+	settings.set_value("other", "tutorialcompleted", ProjectSettings.get_setting("Global/Tutorial"))
 	settings.save("user://settings.cfg")
+
+
+func _ready():
+	save() # This was added for debugging perpouses so i can check contents of settings.cfg.

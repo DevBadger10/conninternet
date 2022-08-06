@@ -2,6 +2,7 @@ extends Node2D
 
 onready var settings = null
 onready var err = null
+onready var ModConfirmerSaidOK = false
 
 # I didn't know how to set the transparency of buttons before.
 
@@ -100,9 +101,46 @@ func loadGlobal():
 	ProjectSettings.set_setting("Global/Fullscreen",settings.get_value("settings", "fullscreen"))
 	ProjectSettings.set_setting("Global/SFXVolume",settings.get_value("settings", "sfxvolume"))
 	ProjectSettings.set_setting("Global/MusicVolume",settings.get_value("settings", "musicvolume"))
-	ProjectSettings.set_setting("Global/ModPathToLoad",settings.get_value("extrasettings", "mod")) # I had forgot to change this to extrasettings.
+	ProjectSettings.set_setting("Global/ModPathToLoad",settings.get_value("extrasettings", "mod")) # I had forgot to change this to extrasettings before
+	ProjectSettings.set_setting("Global/Tutorial",settings.get_value("other", "tutorialcompleted"))
 	setupSettings()
 
 func setupSettings():
 	OS.window_fullscreen = ProjectSettings.get_setting("Global/Fullscreen")
 	# Now do mod stuff!
+	# OK Past Me!
+	if not ProjectSettings.get_setting("Global/ModPathToLoad") == "": #or not ProjectSettings.get_setting("Global/ModPathToLoad") == null: <-- this messed up all my code
+		$ModConfirmation.add_button("Remove Mod",true,"remove")
+		$ModConfirmation.popup_centered()
+
+#func _on_ModConfirmation_popup_hide():
+#	$ModDelay.start()
+#	yield($ModDelay, "timeout")
+#	if not ModConfirmerSaidOK:
+#		ProjectSettings.set_setting("Global/ModPathToLoad","")
+#		save()
+
+func _on_ModConfirmation_confirmed():
+	# ModConfirmerSaidOK = true
+	_load()
+
+func save():
+	settings = ConfigFile.new()
+	settings.set_value("settings", "fullscreen", ProjectSettings.get_setting("Global/Fullscreen")) # general purpose savee script go brrrrrrr
+	settings.set_value("settings", "musicvolume", ProjectSettings.get_setting("Global/MusicVolume"))
+	settings.set_value("settings", "sfxvolume", ProjectSettings.get_setting("Global/SFXVolume"))
+	settings.set_value("extrasettings", "mod", ProjectSettings.get_setting("Global/ModPathToLoad"))
+	settings.set_value("other", "tutorialcompleted", ProjectSettings.get_setting("Global/Tutorial"))
+	settings.save("user://settings.cfg")
+
+func _load():
+	# print(ProjectSettings.load_resource_pack(ProjectSettings.get_setting("Global/ModPathToLoad")))
+	ProjectSettings.load_resource_pack(ProjectSettings.get_setting("Global/ModPathToLoad"))
+
+
+func _on_ModConfirmation_custom_action(action):
+	if action == "remove":
+		ProjectSettings.set_setting("Global/ModPathToLoad","")
+		#print(ProjectSettings.get_setting("Global/ModPathToLoad")+"it workes")
+		$ModConfirmation.hide()
+		save()
