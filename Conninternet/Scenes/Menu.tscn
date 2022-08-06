@@ -149,9 +149,26 @@ wait_time = 2.0
 
 [node name="TitleText" type="Tween" parent="Tweens"]
 
+[node name="ModConfirmation" type="ConfirmationDialog" parent="."]
+visible = true
+margin_left = 368.0
+margin_top = 223.0
+margin_right = 606.0
+margin_bottom = 304.0
+rect_min_size = Vector2( 150, 52.5 )
+theme = ExtResource( 6 )
+dialog_text = "Do you want to load a mod?
+Press Cancel to not load.
+Press Remove to remove."
+
+[node name="ModDelay" type="Timer" parent="."]
+wait_time = 0.1
+
 [connection signal="pressed" from="BigButtons/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="BigButtons/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="SmallButtons/InfoButton" to="." method="_on_InfoButton_pressed"]
 [connection signal="pressed" from="SmallButtons/SettingButton" to="." method="_on_SettingButton_pressed"]
 [connection signal="pressed" from="SmallButtons/ExtraSettingsButton" to="." method="_on_ExtraSettingsButton_pressed"]
 [connection signal="pressed" from="SmallButtons/CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="confirmed" from="ModConfirmation" to="." method="_on_ModConfirmation_confirmed"]
+[connection signal="custom_action" from="ModConfirmation" to="." method="_on_ModConfirmation_custom_action"]
