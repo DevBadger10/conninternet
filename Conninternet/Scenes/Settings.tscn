@@ -27,6 +27,7 @@ custom_icons/unchecked = ExtResource( 3 )
 text = "Fullscreen"
 
 [node name="Fullscreen" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 128.0
 margin_top = 112.0
 margin_right = 176.0
@@ -37,6 +38,7 @@ texture_pressed = ExtResource( 2 )
 expand = true
 
 [node name="BackBuutton" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 64.0
@@ -45,6 +47,7 @@ texture_normal = ExtResource( 5 )
 expand = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 192.0
 margin_top = 130.0
 margin_right = 272.0
@@ -54,6 +57,7 @@ text = "Fullscreen"
 scroll_active = false
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 128.0
 margin_top = 181.0
 margin_right = 240.0
@@ -63,6 +67,7 @@ text = "Music Volume"
 scroll_active = false
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 128.0
 margin_top = 255.0
 margin_right = 224.0
@@ -72,6 +77,7 @@ text = "SFX Volume"
 scroll_active = false
 
 [node name="SFX" type="HSlider" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 128.0
 margin_top = 271.0
 margin_right = 608.0
@@ -83,6 +89,7 @@ custom_icons/grabber = ExtResource( 7 )
 tick_count = 10
 
 [node name="Music" type="HSlider" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 127.0
 margin_top = 199.0
 margin_right = 607.0
@@ -92,6 +99,25 @@ custom_icons/grabber_disabled = ExtResource( 7 )
 custom_icons/grabber_highlight = ExtResource( 7 )
 custom_icons/grabber = ExtResource( 7 )
 tick_count = 10
+
+[node name="Tweens" type="Node" parent="."]
+
+[node name="Back" type="Tween" parent="Tweens"]
+
+[node name="FS" type="Tween" parent="Tweens"]
+
+[node name="FSTXT" type="Tween" parent="Tweens"]
+
+[node name="MV" type="Tween" parent="Tweens"]
+
+[node name="MVTXT" type="Tween" parent="Tweens"]
+
+[node name="SFXV" type="Tween" parent="Tweens"]
+
+[node name="SFXVTXT" type="Tween" parent="Tweens"]
+
+[node name="Wait" type="Timer" parent="."]
+wait_time = 2.0
 
 [connection signal="toggled" from="Fullscreen" to="." method="_on_Fullscreen_toggled"]
 [connection signal="pressed" from="BackBuutton" to="." method="_on_TextureButton_pressed"]
