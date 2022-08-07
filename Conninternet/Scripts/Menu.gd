@@ -49,15 +49,15 @@ func _on_InfoButton_pressed():
 
 
 func _on_SettingButton_pressed():
-	startFadeout("Insert scene path here")
+	startFadeout("res://Scenes/Settings.tscn")
 
 
 func _on_ExtraSettingsButton_pressed():
-	startFadeout("Insert scene path here")
+	startFadeout("res://Scenes/Extra Settings.tscn")
 
 
 func _on_CreditsButton_pressed():
-	startFadeout("Insert scene path here")
+	startFadeout("res://Scenes/Credits.tscn")
 
 
 func fadeIn():
