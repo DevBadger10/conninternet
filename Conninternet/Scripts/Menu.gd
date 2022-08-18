@@ -37,7 +37,7 @@ func startFadeout(new_scene):
 
 func _on_PlayButton_pressed():
 	print("playbuttonpressed") # THE TEXT WAS BLOCKING THE BUTTON GRRR
-	startFadeout("Insert scene path here")
+	startFadeout("res://Scenes/Playing.tscn")
 
 
 func _on_QuitButton_pressed():

@@ -7,6 +7,8 @@ var ever = "I can put whatever I like in here EEeeEeEEeeEEeEEeeEeEeeEE"
 var runLoop = false
 
 func _ready():
+	$FadeIn/Tween.interpolate_property($FadeIn, "modulate", Color(1, 1, 1, 1), Color(1, 1, 1, 0), 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	$FadeIn/Tween.start()
 	for i in 233: # Move proxy servers as they can't do it themselves apparently.
 		CurrentProxyToSet = get_node("Proxy Servers/ProxyServer" + str(i))
 		CurrentProxyToSet.visible = false
@@ -56,13 +58,6 @@ func _on_ChangeButton_pressed():
 	$AddButton.texture_normal = load("res://Resources/AddButton.png")
 	$DeleteButton.texture_normal = load("res://Resources/DeleteButton(RedNotWhite).png")
 	$ChangeButton.texture_normal = load("res://Resources/ChangeButtonHighlighted.png")
-
-
-
-
-
-
-
 
 func _on_TextureButton_pressed():
 	get_tree().quit()
