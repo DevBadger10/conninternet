@@ -18,7 +18,7 @@ func _ready():
 	runLoop = true
 
 func startClick():#Mode():
-	if ProjectSettings.get_setting("Global/Mode") == "create" and get_viewport().get_mouse_position().y > 5: #Added the mouse bit to not beark the game
+	if ProjectSettings.get_setting("Global/Mode") == "create" and get_viewport().get_mouse_position().y < 445: # used to be 5 changed so you cant place them in the dock
 		CurrentProxyToPlace = get_node("Proxy Servers/ProxyServer" + str(CurrentProxyNumberToPlace))
 		CurrentProxyToPlace.visible = true
 		CurrentProxyToPlace.position.x = get_viewport().get_mouse_position().x
