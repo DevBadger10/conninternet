@@ -35,3 +35,34 @@ func _physics_process(delta):
 		#print(get_viewport().get_mouse_position().y)
 		if Input.is_action_just_pressed("left_click"):
 			startClick()
+
+
+func _on_AddButton_pressed():
+	ProjectSettings.set_setting("Global/Mode", "create")
+	$AddButton.texture_normal = load("res://Resources/AddButtonHighlighted.png")
+	$DeleteButton.texture_normal = load("res://Resources/DeleteButton(RedNotWhite).png")
+	$ChangeButton.texture_normal = load("res://Resources/ChangeButton.png")
+
+
+func _on_DeleteButton_pressed():
+	ProjectSettings.set_setting("Global/Mode", "delete")
+	$AddButton.texture_normal = load("res://Resources/AddButton.png")
+	$DeleteButton.texture_normal = load("res://Resources/DeleteButtonHighlighted.png")
+	$ChangeButton.texture_normal = load("res://Resources/ChangeButton.png")
+
+
+func _on_ChangeButton_pressed():
+	ProjectSettings.set_setting("Global/Mode", "change")
+	$AddButton.texture_normal = load("res://Resources/AddButton.png")
+	$DeleteButton.texture_normal = load("res://Resources/DeleteButton(RedNotWhite).png")
+	$ChangeButton.texture_normal = load("res://Resources/ChangeButtonHighlighted.png")
+
+
+
+
+
+
+
+
+func _on_TextureButton_pressed():
+	get_tree().quit()
