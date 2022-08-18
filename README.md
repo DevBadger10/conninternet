@@ -1,5 +1,5 @@
 # Conninternet
-A game where you do stuff and connect packets.
+A game where you do stuff and connect packets! Even after I have finished working on this for the school project, I will continue rolling out updates.
 
 License (The DevBadger Open-source Modding License):
 
