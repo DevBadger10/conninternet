@@ -553,6 +553,14 @@ mouse_filter = 2
 theme = ExtResource( 9 )
 text = "Quit"
 
+[node name="FadeIn" type="ColorRect" parent="."]
+margin_top = -1.0
+margin_right = 1024.0
+margin_bottom = 607.0
+color = Color( 0.141176, 0.392157, 0.745098, 1 )
+
+[node name="Tween" type="Tween" parent="FadeIn"]
+
 [connection signal="pressed" from="AddButton" to="." method="_on_AddButton_pressed"]
 [connection signal="pressed" from="DeleteButton" to="." method="_on_DeleteButton_pressed"]
 [connection signal="pressed" from="ChangeButton" to="." method="_on_ChangeButton_pressed"]
