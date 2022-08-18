@@ -16,6 +16,8 @@ Fullscreen=false
 ModPathToLoad="res://testing.pck"
 Tutorial=false
 Mode="create"
+Money=0
+CustomerService=0
 
 [application]
 
