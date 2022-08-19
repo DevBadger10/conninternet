@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Packet.gd" type="Script" id=1]
+[ext_resource path="res://Resources/C2S.png" type="Texture" id=2]
+
+[node name="Client to Server Packet" type="Sprite"]
+position = Vector2( 0, -1 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+distanceToProxy = 280
+waitTime = 5
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0

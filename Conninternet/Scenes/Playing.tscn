@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Proxy Server.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Playing.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Resources/AddButton.png" type="Texture" id=7]
 [ext_resource path="res://Resources/Button_Base_Big.png" type="Texture" id=8]
 [ext_resource path="res://Resources/PixelText.tres" type="Theme" id=9]
+[ext_resource path="res://Scenes/C2SPacket.tscn" type="PackedScene" id=10]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
@@ -557,9 +558,15 @@ text = "Quit"
 margin_top = -1.0
 margin_right = 1024.0
 margin_bottom = 607.0
+mouse_filter = 2
 color = Color( 0.141176, 0.392157, 0.745098, 1 )
 
 [node name="Tween" type="Tween" parent="FadeIn"]
+
+[node name="Packets" type="Node" parent="."]
+
+[node name="C2S Master" parent="Packets" instance=ExtResource( 10 )]
+position = Vector2( 496, 223 )
 
 [connection signal="pressed" from="AddButton" to="." method="_on_AddButton_pressed"]
 [connection signal="pressed" from="DeleteButton" to="." method="_on_DeleteButton_pressed"]
