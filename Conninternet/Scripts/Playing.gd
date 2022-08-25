@@ -5,8 +5,10 @@ var CurrentProxyNumberToPlace = 0
 var CurrentProxyToPlace
 var ever = "I can put whatever I like in here EEeeEeEEeeEEeEEeeEeEeeEE"
 var runLoop = false
+var makethegamenotlag = 0
 
 func _ready():
+	$FadeIn.visible = true
 	$FadeIn/Tween.interpolate_property($FadeIn, "modulate", Color(1, 1, 1, 1), Color(1, 1, 1, 0), 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	$FadeIn/Tween.start()
 	for i in 233: # Move proxy servers as they can't do it themselves apparently.
@@ -34,9 +36,20 @@ func startClick():#Mode():
 
 func _physics_process(delta):
 	if runLoop:
+		if makethegamenotlag == 0: # without this you get like 5 fps XD now i can add the managing for that into the packets BOOM BABY why did i write that actually I know the answer: coding insanity i have coded to much i am  turning to programmer goo hiss there is light coming in through the window if a == b: a == not b print(a) print(b)                       var a = true var b = true                                   False True                                                                 wait first i need to make antenna
+			$Labels/MoneyLabel.text = "Money: $" + str(ProjectSettings.get_setting("Global/Money"))
+			$Labels/CustomerSatisfactionLabel.text = "Satisaction:    " + str(ProjectSettings.get_setting("Global/CustomerService"))
+			if ProjectSettings.get_setting("Global/CustomerService") > 70:
+				$Labels/Smiley.texture_normal = load("res://Resources/Smiley.png")
+			elif ProjectSettings.get_setting("Global/CustomerService") < 30:
+				$Labels/Smiley.texture_normal = load("res://Resources/Sad.png")
+			else:
+				$Labels/Smiley.texture_normal = load("res://Resources/Neutral.png")
+			makethegamenotlag = 1
 		#print(get_viewport().get_mouse_position().y)
 		if Input.is_action_just_pressed("left_click"):
 			startClick()
+		reset_lag()
 
 
 func _on_AddButton_pressed():
@@ -61,3 +74,12 @@ func _on_ChangeButton_pressed():
 
 func _on_TextureButton_pressed():
 	get_tree().quit()
+
+func reset_lag():
+	$Timer.start()
+	yield($Timer,"timeout")
+	makethegamenotlag = 0
+
+
+func _on_Smiley_pressed():
+	get_tree().change_scene("res://Scenes/Ping.tscn")
