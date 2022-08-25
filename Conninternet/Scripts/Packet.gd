@@ -13,10 +13,10 @@ onready var goodLocation = []
 
 func _physics_process(delta):
 	if tweenFinished:
-		goodLocation = []
+		goodLocation.clear() # Workes now.
 		for i in 233:
 			nearestProxy = get_parent().get_parent().get_node("Proxy Servers/ProxyServer"+str(i))
-			if me.position.distance_to(nearestProxy.position) < distanceToProxy: # I used the wrong </> here. AAAAAAAAAAAAAAAAAa
+			if me.position.distance_to(nearestProxy.position) < distanceToProxy and nearestProxy.power: # I used the wrong </> here. AAAAAAAAAAAAAAAAAa
 				print(i)
 				goodLocation.append(nearestProxy.position)
 		tweenFinished = false
