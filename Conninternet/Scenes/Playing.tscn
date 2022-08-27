@@ -557,20 +557,10 @@ mouse_filter = 2
 theme = ExtResource( 9 )
 text = "Quit"
 
-[node name="FadeIn" type="ColorRect" parent="."]
-visible = false
-margin_top = -1.0
-margin_right = 1024.0
-margin_bottom = 607.0
-mouse_filter = 2
-color = Color( 0.141176, 0.392157, 0.745098, 1 )
-
-[node name="Tween" type="Tween" parent="FadeIn"]
-
 [node name="Packets" type="Node" parent="."]
 
 [node name="C2S 1" parent="Packets" instance=ExtResource( 10 )]
-position = Vector2( 496, 223 )
+position = Vector2( 496, 92 )
 waitTime = 3
 minSatisfaction = 2
 maxSatisfaction = 5
@@ -621,6 +611,43 @@ texture = ExtResource( 12 )
 position = Vector2( 48, 351 )
 scale = Vector2( 3.5, 3.5 )
 texture = ExtResource( 13 )
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.5
+
+[node name="LoseText" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 304.0
+margin_top = 127.0
+margin_right = 365.0
+margin_bottom = 140.0
+rect_scale = Vector2( 6, 6 )
+theme = ExtResource( 9 )
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+text = "You lost"
+scroll_active = false
+
+[node name="PleaseQuit" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 432.0
+margin_top = 207.0
+margin_right = 552.0
+margin_bottom = 220.0
+rect_scale = Vector2( 2, 2 )
+theme = ExtResource( 9 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+text = "Please quit"
+scroll_active = false
+
+[node name="FadeIn" type="ColorRect" parent="."]
+visible = false
+margin_top = -1.0
+margin_right = 1024.0
+margin_bottom = 607.0
+mouse_filter = 2
+color = Color( 0.141176, 0.392157, 0.745098, 1 )
+
+[node name="Tween" type="Tween" parent="FadeIn"]
 
 [connection signal="pressed" from="AddButton" to="." method="_on_AddButton_pressed"]
 [connection signal="pressed" from="DeleteButton" to="." method="_on_DeleteButton_pressed"]
