@@ -560,12 +560,54 @@ text = "Quit"
 [node name="Packets" type="Node" parent="."]
 
 [node name="C2S 1" parent="Packets" instance=ExtResource( 10 )]
-position = Vector2( 496, 92 )
+position = Vector2( 832, 63 )
 waitTime = 3
 minSatisfaction = 2
 maxSatisfaction = 5
 minMoney = 20
 maxMoney = 50
+
+[node name="C2S 2" parent="Packets" instance=ExtResource( 10 )]
+position = Vector2( 576, 63 )
+waitTime = 3
+minSatisfaction = 2
+maxSatisfaction = 5
+minMoney = 20
+maxMoney = 50
+
+[node name="C2S 3" parent="Packets" instance=ExtResource( 10 )]
+position = Vector2( 960, 207 )
+waitTime = 3
+minSatisfaction = 2
+maxSatisfaction = 5
+minMoney = 20
+maxMoney = 50
+
+[node name="C2S 4" parent="Packets" instance=ExtResource( 10 )]
+position = Vector2( 704, 63 )
+waitTime = 3
+minSatisfaction = 2
+maxSatisfaction = 5
+minMoney = 20
+maxMoney = 50
+
+[node name="C2S 5" parent="Packets" instance=ExtResource( 10 )]
+position = Vector2( 960, 335 )
+waitTime = 3
+minSatisfaction = 2
+maxSatisfaction = 5
+minMoney = 20
+maxMoney = 50
+
+[node name="C2S 6" parent="Packets" instance=ExtResource( 10 )]
+position = Vector2( 960, 63 )
+waitTime = 3
+minSatisfaction = 2
+maxSatisfaction = 5
+minMoney = 20
+maxMoney = 50
+
+[node name="move all these and add them with waittime and object pooling" type="Node" parent="Packets"]
 
 [node name="Labels" type="Node" parent="."]
 
