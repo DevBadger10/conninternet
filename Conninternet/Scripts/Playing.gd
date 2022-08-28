@@ -61,7 +61,7 @@ func _physics_process(delta):
 			ProjectSettings.set_setting("Global/Money",999999999)
 		if Input.is_action_pressed("dev_satisfaction"):
 			ProjectSettings.set_setting("Global/CustomerService",100)
-		if ProjectSettings.get_setting("Global/CustomerService") < 0:
+		if ProjectSettings.get_setting("Global/CustomerService") == 0:
 			$LoseText.visible = true
 			$PleaseQuit.visible = true
 			get_tree().paused = true
