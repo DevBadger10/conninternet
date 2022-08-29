@@ -1,0 +1,184 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/List.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Button_Base_Big.png" type="Texture" id=2]
+[ext_resource path="res://Resources/PixelText.tres" type="Theme" id=3]
+[ext_resource path="res://Resources/Button_Base_Small.png" type="Texture" id=4]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Backround" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 607.0
+color = Color( 0.141176, 0.392157, 0.745098, 1 )
+
+[node name="Backround2" type="ColorRect" parent="."]
+margin_left = 128.0
+margin_top = 143.0
+margin_right = 896.0
+margin_bottom = 527.0
+color = Color( 0.0980392, 0.270588, 0.513726, 1 )
+
+[node name="Tween" type="Tween" parent="Backround2"]
+
+[node name="Menu" type="TextureButton" parent="."]
+margin_left = 16.0
+margin_top = 15.0
+margin_right = 112.0
+margin_bottom = 62.0
+texture_normal = ExtResource( 2 )
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menu"]
+margin_left = 9.0
+margin_top = 15.0
+margin_right = 96.0
+margin_bottom = 32.0
+mouse_filter = 2
+theme = ExtResource( 3 )
+text = "Main Menu"
+scroll_active = false
+
+[node name="Tween" type="Tween" parent="Menu"]
+
+[node name="Info1" type="TextureButton" parent="."]
+margin_left = 192.0
+margin_top = 191.0
+margin_right = 240.0
+margin_bottom = 238.0
+texture_normal = ExtResource( 4 )
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Info1"]
+margin_left = 21.0
+margin_top = 16.0
+margin_right = 37.0
+margin_bottom = 33.0
+mouse_filter = 2
+theme = ExtResource( 3 )
+text = "1"
+scroll_active = false
+
+[node name="Tween" type="Tween" parent="Info1"]
+
+[node name="Info2" type="TextureButton" parent="."]
+margin_left = 304.0
+margin_top = 191.0
+margin_right = 352.0
+margin_bottom = 238.0
+texture_normal = ExtResource( 4 )
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Info2"]
+margin_left = 20.0
+margin_top = 16.0
+margin_right = 36.0
+margin_bottom = 33.0
+mouse_filter = 2
+theme = ExtResource( 3 )
+text = "2"
+scroll_active = false
+
+[node name="Tween" type="Tween" parent="Info2"]
+
+[node name="Info3" type="TextureButton" parent="."]
+margin_left = 416.0
+margin_top = 191.0
+margin_right = 464.0
+margin_bottom = 238.0
+texture_normal = ExtResource( 4 )
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Info3"]
+margin_left = 20.0
+margin_top = 16.0
+margin_right = 36.0
+margin_bottom = 33.0
+mouse_filter = 2
+theme = ExtResource( 3 )
+text = "3"
+scroll_active = false
+
+[node name="Tween" type="Tween" parent="Info3"]
+
+[node name="Info4" type="TextureButton" parent="."]
+margin_left = 544.0
+margin_top = 191.0
+margin_right = 592.0
+margin_bottom = 238.0
+texture_normal = ExtResource( 4 )
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Info4"]
+margin_left = 18.0
+margin_top = 16.0
+margin_right = 34.0
+margin_bottom = 33.0
+mouse_filter = 2
+theme = ExtResource( 3 )
+text = "4"
+scroll_active = false
+
+[node name="Tween" type="Tween" parent="Info4"]
+
+[node name="Info5" type="TextureButton" parent="."]
+margin_left = 656.0
+margin_top = 191.0
+margin_right = 704.0
+margin_bottom = 238.0
+texture_normal = ExtResource( 4 )
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Info5"]
+margin_left = 19.0
+margin_top = 16.0
+margin_right = 35.0
+margin_bottom = 33.0
+mouse_filter = 2
+theme = ExtResource( 3 )
+text = "5
+"
+scroll_active = false
+
+[node name="Tween" type="Tween" parent="Info5"]
+
+[node name="Info6" type="TextureButton" parent="."]
+margin_left = 768.0
+margin_top = 191.0
+margin_right = 816.0
+margin_bottom = 238.0
+texture_normal = ExtResource( 4 )
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Info6"]
+margin_left = 19.0
+margin_top = 16.0
+margin_right = 35.0
+margin_bottom = 33.0
+mouse_filter = 2
+theme = ExtResource( 3 )
+text = "6
+"
+scroll_active = false
+
+[node name="Tween" type="Tween" parent="Info6"]
+
+[node name="Wait" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="screen" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 607.0
+mouse_filter = 2
+color = Color( 0.141176, 0.392157, 0.745098, 1 )
+
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="Info1" to="." method="_on_Info1_pressed"]
+[connection signal="pressed" from="Info2" to="." method="_on_Info2_pressed"]
+[connection signal="pressed" from="Info3" to="." method="_on_Info3_pressed"]
+[connection signal="pressed" from="Info4" to="." method="_on_Info4_pressed"]
+[connection signal="pressed" from="Info5" to="." method="_on_Info5_pressed"]
+[connection signal="pressed" from="Info6" to="." method="_on_Info6_pressed"]

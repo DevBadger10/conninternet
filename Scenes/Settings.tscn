@@ -1,0 +1,125 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Resources/PixelText.tres" type="Theme" id=1]
+[ext_resource path="res://Resources/Checkbox_Checked.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Checkbox_Unchecked.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Settings.gd" type="Script" id=4]
+[ext_resource path="res://Resources/Button_Back.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Tick.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Slider.png" type="Texture" id=7]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 607.0
+color = Color( 0.141176, 0.392157, 0.745098, 1 )
+
+[node name="Fullscreen OLd" type="CheckBox" parent="."]
+margin_left = 16.0
+margin_top = -97.0
+margin_right = 256.0
+margin_bottom = -18.0
+theme = ExtResource( 1 )
+custom_icons/checked = ExtResource( 2 )
+custom_icons/unchecked = ExtResource( 3 )
+text = "Fullscreen"
+
+[node name="Fullscreen" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 128.0
+margin_top = 112.0
+margin_right = 176.0
+margin_bottom = 159.0
+toggle_mode = true
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+expand = true
+
+[node name="BackBuutton" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 64.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 5 )
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 192.0
+margin_top = 130.0
+margin_right = 272.0
+margin_bottom = 146.0
+theme = ExtResource( 1 )
+text = "Fullscreen"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 128.0
+margin_top = 181.0
+margin_right = 240.0
+margin_bottom = 197.0
+theme = ExtResource( 1 )
+text = "Music Volume"
+scroll_active = false
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 128.0
+margin_top = 255.0
+margin_right = 224.0
+margin_bottom = 271.0
+theme = ExtResource( 1 )
+text = "SFX Volume"
+scroll_active = false
+
+[node name="SFX" type="HSlider" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 128.0
+margin_top = 271.0
+margin_right = 608.0
+margin_bottom = 287.0
+custom_icons/tick = ExtResource( 6 )
+custom_icons/grabber_disabled = ExtResource( 7 )
+custom_icons/grabber_highlight = ExtResource( 7 )
+custom_icons/grabber = ExtResource( 7 )
+tick_count = 10
+
+[node name="Music" type="HSlider" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 127.0
+margin_top = 199.0
+margin_right = 607.0
+margin_bottom = 231.0
+custom_icons/tick = ExtResource( 6 )
+custom_icons/grabber_disabled = ExtResource( 7 )
+custom_icons/grabber_highlight = ExtResource( 7 )
+custom_icons/grabber = ExtResource( 7 )
+tick_count = 10
+
+[node name="Tweens" type="Node" parent="."]
+
+[node name="Back" type="Tween" parent="Tweens"]
+
+[node name="FS" type="Tween" parent="Tweens"]
+
+[node name="FSTXT" type="Tween" parent="Tweens"]
+
+[node name="MV" type="Tween" parent="Tweens"]
+
+[node name="MVTXT" type="Tween" parent="Tweens"]
+
+[node name="SFXV" type="Tween" parent="Tweens"]
+
+[node name="SFXVTXT" type="Tween" parent="Tweens"]
+
+[node name="Wait" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="toggled" from="Fullscreen" to="." method="_on_Fullscreen_toggled"]
+[connection signal="pressed" from="BackBuutton" to="." method="_on_TextureButton_pressed"]
+[connection signal="value_changed" from="SFX" to="." method="_on_SFX_value_changed"]
+[connection signal="value_changed" from="Music" to="." method="_on_Music_value_changed"]

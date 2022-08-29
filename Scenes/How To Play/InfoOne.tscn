@@ -1,0 +1,156 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/How To Play/InfoOne.gd" type="Script" id=1]
+[ext_resource path="res://Resources/ReceiveAntennaVersion2.png" type="Texture" id=2]
+[ext_resource path="res://Resources/DeleteButton(RedNotWhite).png" type="Texture" id=3]
+[ext_resource path="res://Resources/AddButton.png" type="Texture" id=4]
+[ext_resource path="res://Resources/PoweredOffProxy.png" type="Texture" id=5]
+[ext_resource path="res://Resources/C2S.png" type="Texture" id=6]
+[ext_resource path="res://Resources/SendAttenna.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Proxy.png" type="Texture" id=8]
+[ext_resource path="res://Resources/ChangeButton.png" type="Texture" id=9]
+[ext_resource path="res://Resources/PixelText.tres" type="Theme" id=10]
+[ext_resource path="res://Resources/NextArrow.png" type="Texture" id=11]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Backround" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 607.0
+color = Color( 0.141176, 0.392157, 0.745098, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 32.0
+margin_top = 15.0
+margin_right = 124.0
+margin_bottom = 31.0
+rect_scale = Vector2( 4, 4 )
+theme = ExtResource( 10 )
+text = "How to play"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 32.0
+margin_top = 68.0
+margin_right = 124.0
+margin_bottom = 84.0
+theme = ExtResource( 10 )
+text = "Part One"
+scroll_active = false
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 32.0
+margin_top = 143.0
+margin_right = 800.0
+margin_bottom = 501.0
+rect_scale = Vector2( 1.25, 1.25 )
+theme = ExtResource( 10 )
+text = "Conninternet Training
+Hello! Thank you for getting a job with Conninternet, the new internet management company!
+
+This is a packet:     
+
+As ISPs, our goal is to get packets from the Send antenna to the Receive antenna.
+We do this with Proxy Servers: 
+    
+You are in charge of placing those proxy servers. You can put them down using the Add button. All packets within a certain radius will go to a proxy server, unless the Receive antenna is within range. 
+
+If you don't want a proxy server to have packets going to it, then you can turn it off with the Change tool. A powered-off proxy is the same, just with grey lights.
+
+
+
+When you buy a proxy. you spend $300. When you remove it from the network with the Delete tool, you don't get that money back.
+
+The Customer Satisfaction is important. It's capped at 100 and if it reaches 0 you lose."
+scroll_active = false
+
+[node name="C2s" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 203, 213 )
+scale = Vector2( 2.75, 2.75 )
+texture = ExtResource( 6 )
+
+[node name="ReceiveAntennaVersion2" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 698, 223 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+
+[node name="SendAttenna" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 476, 223 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+
+[node name="Proxy" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 341, 278 )
+scale = Vector2( 1.625, 1.5 )
+texture = ExtResource( 8 )
+
+[node name="AddButton" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 867, 287 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 4 )
+
+[node name="ChangeButton" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 67, 458 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 9 )
+
+[node name="PoweredOffProxy" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 272, 444 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 5 )
+
+[node name="DeleteButton(RedNotWhite)" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 902, 479 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Tween2" type="Tween" parent="."]
+
+[node name="Tween3" type="Tween" parent="."]
+
+[node name="Tween4" type="Tween" parent="."]
+
+[node name="Tween5" type="Tween" parent="."]
+
+[node name="Tween6" type="Tween" parent="."]
+
+[node name="Tween7" type="Tween" parent="."]
+
+[node name="Tween8" type="Tween" parent="."]
+
+[node name="Tween9" type="Tween" parent="."]
+
+[node name="Tween10" type="Tween" parent="."]
+
+[node name="Tween11" type="Tween" parent="."]
+
+[node name="Tween12" type="Tween" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 960.0
+margin_top = 543.0
+margin_right = 1000.0
+margin_bottom = 583.0
+texture_normal = ExtResource( 11 )
+expand = true
+stretch_mode = 4
+
+[node name="Wait" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
