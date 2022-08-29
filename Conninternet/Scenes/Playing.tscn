@@ -691,6 +691,10 @@ color = Color( 0.141176, 0.392157, 0.745098, 1 )
 
 [node name="Tween" type="Tween" parent="FadeIn"]
 
+[node name="WaveHandler" type="Node" parent="."]
+
+[node name="Timer" type="Timer" parent="WaveHandler"]
+
 [connection signal="pressed" from="AddButton" to="." method="_on_AddButton_pressed"]
 [connection signal="pressed" from="DeleteButton" to="." method="_on_DeleteButton_pressed"]
 [connection signal="pressed" from="ChangeButton" to="." method="_on_ChangeButton_pressed"]

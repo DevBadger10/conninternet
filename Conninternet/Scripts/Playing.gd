@@ -9,6 +9,7 @@ var makethegamenotlag = 0
 var runRepeat = true
 
 func _ready():
+	ProjectSettings.set_setting("Global/Stage",1)
 	$FadeIn.visible = true
 	$FadeIn/Tween.interpolate_property($FadeIn, "modulate", Color(1, 1, 1, 1), Color(1, 1, 1, 0), 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	$FadeIn/Tween.start()
@@ -21,6 +22,7 @@ func _ready():
 	#startClickMode()
 	#startGameplayLoop()
 	runLoop = true
+	wavehandler()
 
 func startClick():#Mode():
 	if ProjectSettings.get_setting("Global/Mode") == "create" and get_viewport().get_mouse_position().y < 445 and ProjectSettings.get_setting("Global/Money") > 0: # used to be 5 changed so you cant place them in the dock
@@ -105,3 +107,24 @@ func repeat():
 		yield($Timer2,"timeout")
 		ProjectSettings.set_setting("Global/CustomerService", ProjectSettings.get_setting("Global/CustomerService") - 1)
 		runRepeat = true
+
+func wavehandler():
+	$WaveHandler/Timer.wait_time = 90
+	$WaveHandler/Timer.start()
+	yield($WaveHandler/Timer,"timeout")
+	ProjectSettings.set_setting("Global/Stage",2)
+	$Timer2.wait_time = 2
+	$WaveHandler/Timer.wait_time = 30
+	$WaveHandler/Timer.start()
+	yield($WaveHandler/Timer,"timeout")
+	ProjectSettings.set_setting("Global/Stage",3)
+	$Timer2.wait_time = 1.85
+	$WaveHandler/Timer.wait_time = 30
+	$WaveHandler/Timer.start()
+	yield($WaveHandler/Timer,"timeout")
+	ProjectSettings.set_setting("Global/Stage",4)
+	$WaveHandler/Timer.wait_time = 30
+	$WaveHandler/Timer.start()
+	yield($WaveHandler/Timer,"timeout")
+	ProjectSettings.set_setting("Global/Stage",5)
+	$Timer2.wait_time = 1

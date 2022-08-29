@@ -55,7 +55,7 @@ func _on_TextureButton_pressed():
 	#	fadeout("res://Scenes/Playing.tscn")
 	#if not ProjectSettings.get_setting("Global/ProceedToGameOrToInfoScreen"):
 	#	fadeout("res://Scenes/Info.tscn")
-	fadeout("res://Scenes/How To Play/InfoTwo.tscn")
+	fadeout("res://Scenes/How To Play/InfoFive.tscn")
 
 func fadeout(path):
 	$Tween.interpolate_property($RichTextLabel, "modulate", Color(1, 1, 1, 1), Color(1, 1, 1, 0), 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)

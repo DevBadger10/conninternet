@@ -1,8 +1,8 @@
 extends Node2D
 #var cfg
 #var err
-#onready var NextArrow = load("res://Resources/NextArrow.png")
-#onready var BackButton = load("res://Resources/Button_Back.png")
+onready var NextArrow = load("res://Resources/NextArrow.png")
+onready var BackButton = load("res://Resources/Button_Back.png")
 
 func _ready():
 	#cfg = ConfigFile.new()
@@ -13,13 +13,13 @@ func _ready():
 	#	get_tree().change_scene("res://Scenes/Playing.tscn")
 	#else:
 	fadein()
-	#if ProjectSettings.get_setting("Global/ProceedToGameOrToInfoScreen"):
-	#	Print(ProjectSettings.get_setting("Global/ProceedToGameOrToInfoScreen"))
-	#	$TextureButton.texture_normal = NextArrow
-	#if not ProjectSettings.get_setting("Global/ProceedToGameOrToInfoScreen"):
-	#	Print(ProjectSettings.get_setting("Global/ProceedToGameOrToInfoScreen"))
-	#	$TextureButton.texture_normal = BackButton
-	
+	if ProjectSettings.get_setting("Global/ProceedToGameOrToInfoScreen"):
+		Print(ProjectSettings.get_setting("Global/ProceedToGameOrToInfoScreen"))
+		$TextureButton.texture_normal = NextArrow
+	if not ProjectSettings.get_setting("Global/ProceedToGameOrToInfoScreen"):
+		Print(ProjectSettings.get_setting("Global/ProceedToGameOrToInfoScreen"))
+		$TextureButton.texture_normal = BackButton
+
 
 func fadein():
 	$Tween.interpolate_property($RichTextLabel, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
@@ -51,11 +51,11 @@ func Print(string):
 	print(str(string))
 
 func _on_TextureButton_pressed():
-	#if ProjectSettings.get_setting("Global/ProceedToGameOrToInfoScreen"):
-	#	fadeout("res://Scenes/Playing.tscn")
-	#if not ProjectSettings.get_setting("Global/ProceedToGameOrToInfoScreen"):
-	#	fadeout("res://Scenes/Info.tscn")
-	fadeout("res://Scenes/How To Play/InfoTwo.tscn")
+	if ProjectSettings.get_setting("Global/ProceedToGameOrToInfoScreen"):
+		fadeout("res://Scenes/Playing.tscn")
+	if not ProjectSettings.get_setting("Global/ProceedToGameOrToInfoScreen"):
+		fadeout("res://Scenes/Info.tscn")
+	#fadeout("res://Scenes/How To Play/InfoFive.tscn")
 
 func fadeout(path):
 	$Tween.interpolate_property($RichTextLabel, "modulate", Color(1, 1, 1, 1), Color(1, 1, 1, 0), 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)

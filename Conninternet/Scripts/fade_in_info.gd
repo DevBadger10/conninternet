@@ -31,4 +31,4 @@ func fadeOut(new_scene):
 
 
 func _on_TextureButton_pressed():
-	fadeOut("res://Scenes/How To Play/List.tscn")
+	fadeOut("res://Scenes/How To Play/InfoOne.tscn")

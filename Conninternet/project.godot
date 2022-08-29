@@ -19,6 +19,7 @@ Mode="create"
 Money=3000
 CustomerService=75
 ProceedToGameOrToInfoScreen=true
+Stage=0
 
 [application]
 

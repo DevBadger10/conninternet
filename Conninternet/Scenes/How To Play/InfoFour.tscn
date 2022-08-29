@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Scenes/How To Play/InfoOne.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/How To Play/InfoFour.gd" type="Script" id=1]
 [ext_resource path="res://Resources/ReceiveAntennaVersion2.png" type="Texture" id=2]
 [ext_resource path="res://Resources/DeleteButton(RedNotWhite).png" type="Texture" id=3]
 [ext_resource path="res://Resources/AddButton.png" type="Texture" id=4]
 [ext_resource path="res://Resources/PoweredOffProxy.png" type="Texture" id=5]
-[ext_resource path="res://Resources/C2S.png" type="Texture" id=6]
+[ext_resource path="res://Resources/FBI.png" type="Texture" id=6]
 [ext_resource path="res://Resources/SendAttenna.png" type="Texture" id=7]
-[ext_resource path="res://Resources/Proxy.png" type="Texture" id=8]
+[ext_resource path="res://Resources/HackedProxyWithSmokeAsHackersAreForcingItToMineCrypto.png" type="Texture" id=8]
 [ext_resource path="res://Resources/ChangeButton.png" type="Texture" id=9]
 [ext_resource path="res://Resources/PixelText.tres" type="Theme" id=10]
 [ext_resource path="res://Resources/NextArrow.png" type="Texture" id=11]
@@ -38,7 +38,7 @@ margin_top = 68.0
 margin_right = 124.0
 margin_bottom = 84.0
 theme = ExtResource( 10 )
-text = "Part One"
+text = "Part Four"
 scroll_active = false
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
@@ -50,69 +50,57 @@ margin_bottom = 501.0
 rect_scale = Vector2( 1.25, 1.25 )
 theme = ExtResource( 10 )
 text = "Conninternet Training
-Hello! Thank you for getting a job with Conninternet, the new internet management company!
 
-This is a packet:     
+Hackers will, at this point, be getting more advanced. Sometimes, proxies will be taken over by them. They will steal packets, losing us customer satisfaction and money. The police force have also gotten involved. They want us to send FBI packets to thwart these hackers. 
 
-As ISPs, our goal is to get packets from the Send antenna to the Receive antenna.
-We do this with Proxy Servers: 
-    
-You are in charge of placing those proxy servers. You can put them down using the Add button. All packets within a certain radius will go to a proxy server, unless the Receive antenna is within range. 
-
-If you don't want a proxy server to have packets going to it, then you can turn it off with the Change tool. A powered-off proxy is the same, just with grey lights.
-
-
-
-When you buy a proxy. you spend $300. When you remove it from the network with the Delete tool, you don't get that money back.
-
-The Customer Satisfaction is important. It's capped at 100 and if it reaches 0 you lose."
+We lose money if it isn't delivered on time, but if it is, we get a hefty payroll."
 scroll_active = false
 
 [node name="C2s" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 203, 213 )
+position = Vector2( 480, 255 )
 scale = Vector2( 2.75, 2.75 )
 texture = ExtResource( 6 )
 
 [node name="ReceiveAntennaVersion2" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 698, 223 )
+visible = false
+position = Vector2( -437, -137 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
 
 [node name="SendAttenna" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 476, 223 )
+visible = false
+position = Vector2( -659, -137 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 7 )
 
 [node name="Proxy" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 341, 278 )
-scale = Vector2( 1.625, 1.5 )
+position = Vector2( 864, 129 )
+scale = Vector2( 2.8125, 2.875 )
 texture = ExtResource( 8 )
 
 [node name="AddButton" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 867, 287 )
+visible = false
+position = Vector2( -268, -73 )
 scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 4 )
 
 [node name="ChangeButton" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 67, 458 )
+visible = false
+position = Vector2( -1068, 98 )
 scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 9 )
 
 [node name="PoweredOffProxy" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 272, 444 )
+visible = false
+position = Vector2( -863, 84 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 5 )
 
 [node name="DeleteButton(RedNotWhite)" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 902, 479 )
+visible = false
+position = Vector2( -233, 119 )
 scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 3 )
 
