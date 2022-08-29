@@ -18,6 +18,7 @@ Tutorial=false
 Mode="create"
 Money=3000
 CustomerService=75
+ProceedToGameOrToInfoScreen=true
 
 [application]
 
