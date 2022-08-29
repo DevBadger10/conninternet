@@ -28,7 +28,7 @@ func _ready():
 
 func _physics_process(delta):
 #if timeDone == true:
-	#print(timeDone) # WHYA RENT YOU WORKINGGGGGG YOU HAV EVERYTHING YOU NEED
+	#print(timeDone) # WHYA RENT YOU WORKINGGGGGG YOU HAV EVERYTHING YOU NEED except set values. *inhale* *exhale*
 	if tweenFinished:
 		#print(timeDone)
 		goodLocationTimed.clear() # Workes now.

@@ -15,7 +15,3 @@ script = ExtResource( 1 )
 wait_time = 3.0
 
 [node name="Timer2" type="Timer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
