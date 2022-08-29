@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/FBI.png-3b7329451cdd024d7ccf1e7d517ac247.stex"
+path="res://.import/HackedProxyWithSmokeAsHackersAreForcingItToMineCrypto.png-756d714b358d6eb6a8e99c0f7a067a61.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/FBI.png"
-dest_files=[ "res://.import/FBI.png-3b7329451cdd024d7ccf1e7d517ac247.stex" ]
+source_file="res://Resources/HackedProxyWithSmokeAsHackersAreForcingItToMineCrypto.png"
+dest_files=[ "res://.import/HackedProxyWithSmokeAsHackersAreForcingItToMineCrypto.png-756d714b358d6eb6a8e99c0f7a067a61.stex" ]
 
 [params]
 
