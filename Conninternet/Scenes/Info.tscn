@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/fade_in_info.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Button_Back.png" type="Texture" id=2]
 [ext_resource path="res://Resources/PixelText.tres" type="Theme" id=3]
+[ext_resource path="res://Resources/Button_Base_Big.png" type="Texture" id=4]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,7 +15,7 @@ rect_scale = Vector2( 24.36, 0.306721 )
 color = Color( 0.141176, 0.392157, 0.745098, 1 )
 
 [node name="Info Text" type="RichTextLabel" parent="."]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 1, 1, 1, 0.00392157 )
 margin_left = 256.0
 margin_top = 175.0
 margin_right = 832.0
@@ -39,4 +40,30 @@ expand = true
 [node name="Wait" type="Timer" parent="."]
 wait_time = 2.0
 
+[node name="TextureButton" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0.00392157 )
+margin_left = 452.0
+margin_top = 280.0
+margin_right = 548.0
+margin_bottom = 328.0
+texture_normal = ExtResource( 4 )
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureButton"]
+modulate = Color( 1, 1, 1, 0.00392157 )
+margin_left = 22.0
+margin_top = 8.0
+margin_right = 86.0
+margin_bottom = 48.0
+mouse_filter = 2
+theme = ExtResource( 3 )
+text = "How to 
+  Play"
+scroll_active = false
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Tween2" type="Tween" parent="."]
+
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

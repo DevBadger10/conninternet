@@ -167,6 +167,14 @@ scroll_active = false
 [node name="Wait" type="Timer" parent="."]
 wait_time = 2.0
 
+[node name="Tween" type="Tween" parent="."]
+
+[node name="screen" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 607.0
+mouse_filter = 2
+color = Color( 0.141176, 0.392157, 0.745098, 1 )
+
 [connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
 [connection signal="pressed" from="Info1" to="." method="_on_Info1_pressed"]
 [connection signal="pressed" from="Info2" to="." method="_on_Info2_pressed"]

@@ -37,7 +37,8 @@ func startFadeout(new_scene):
 
 func _on_PlayButton_pressed():
 	print("playbuttonpressed") # THE TEXT WAS BLOCKING THE BUTTON GRRR
-	startFadeout("res://Scenes/Playing.tscn")
+	ProjectSettings.set_setting("Global/ProceedToGameOrToInfoScreen",true)
+	startFadeout("res://Scenes/How To Play/InfoOne.tscn")
 
 
 func _on_QuitButton_pressed():
