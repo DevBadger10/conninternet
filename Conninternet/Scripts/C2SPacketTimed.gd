@@ -16,6 +16,7 @@ onready var send_antenna = get_parent().get_parent().get_node("Send")
 onready var receive_antenna = get_parent().get_parent().get_node("Receive") # Just one small change! That was all I had t do!
 onready var timeDone = false
 onready var lagtimer = true
+onready var proxyToMoveTo = self
 
 func _ready():
 	randomize()
@@ -34,7 +35,7 @@ func _physics_process(delta):
 			#print(timeDone)
 			goodLocationTimed.clear() # Workes now.
 			if me.position.distance_to(receive_antenna.position) < distanceToProxy: # I HAD PUT SEND ANTNNA NOT RECEIVE AAAAAA
-				goodLocationTimed.append(receive_antenna.position)# WHAT ARE... ooooh i hadnt changed the variable name thats why its flying to the moon
+				goodLocationTimed.append(receive_antenna)#.position) I didnt get that at first # WHAT ARE... ooooh i hadnt changed the variable name thats why its flying to the moon
 				tweenFinished = false
 				startTween(true)
 				#print("detected end server") #OK so its a problem with the IF stsement also note to self addd rop in wait time till drop in
@@ -42,22 +43,28 @@ func _physics_process(delta):
 			else:
 				for i in 233:
 					nearestProxy = get_parent().get_parent().get_node("Proxy Servers/ProxyServer"+str(i))
-					if me.position.distance_to(nearestProxy.position) < distanceToProxy and nearestProxy.power: # I used the wrong </> here. AAAAAAAAAAAAAAAAAa
+					if me.position.distance_to(nearestProxy.position) < distanceToProxy:# and nearestProxy.power: <-- this broke the hacked # I used the wrong </> here. AAAAAAAAAAAAAAAAAa
 							#print(i)
-						goodLocationTimed.append(nearestProxy.position)
+						if nearestProxy.power:
+							goodLocationTimed.append(nearestProxy)#.position)
+						
 				tweenFinished = false
 				startTween(false)
 				fixlag()
 
 func startTween(isEnd):
+	#proxyToMoveTo = goodLocationTimed[randi() % goodLocationTimed.size()]
 	if goodLocationTimed.size() > 0:
-		$Tween.interpolate_property(me, "position", me.position, goodLocationTimed[randi() % goodLocationTimed.size()], 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
+		proxyToMoveTo = goodLocationTimed[randi() % goodLocationTimed.size()]
+		$Tween.interpolate_property(me, "position", me.position, proxyToMoveTo.position, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
 		$Tween.start()
 		yield($Tween,"tween_completed")
 		if isEnd == true:
 			end()
 		else:
 			tweenFinished = true
+			if proxyToMoveTo.hacked == true:
+				me.position = send_antenna.position
 	else:
 		$Timer.start()
 		yield($Timer,"timeout")

@@ -53,7 +53,9 @@ text = "Conninternet Training
 
 Hackers will, at this point, be getting more advanced. Sometimes, proxies will be taken over by them. They will steal packets, losing us customer satisfaction and money. The police force have also gotten involved. They want us to send FBI packets to thwart these hackers. 
 
-We lose money if it isn't delivered on time, but if it is, we get a hefty payroll."
+We lose money if it isn't delivered on time, but if it is, all amliscous packets are gone.
+
+To return a hacked proxy to its working state,  you need to complete a task of epic proportions... turn it off anf on again."
 scroll_active = false
 
 [node name="C2s" type="Sprite" parent="."]

@@ -92,5 +92,6 @@ func ihaveranoutofcreativefunctionnames():
 	$Timer3.start()
 	yield($Timer3,"timeout")
 	ProjectSettings.set_setting("Global/Money",ProjectSettings.get_setting("Global/Money") - 500)
-	ProjectSettings.set_setting("Global/CustomerService",round(ProjectSettings.get_setting("Global/CustomerService") / 2))
+	ProjectSettings.set_setting("Global/CustomerService",round(ProjectSettings.get_setting("Global/CustomerService") / 3))
+	ProjectSettings.set_setting("Global/FBIDone",true)
 	self.queue_free()
