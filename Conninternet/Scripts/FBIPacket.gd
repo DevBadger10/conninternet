@@ -1,5 +1,9 @@
 extends Sprite
 
+# Before, the malisxcous packeyts sent my satisfaction in the negatives, a land not previously accounted for. I have balanced them and am trying to fix the lag. 
+
+onready var makeitnotbouncewierdly = true
+
 export var distanceToProxy = 0
 export var waitTime = 0
 export var minSatisfaction = 0
@@ -15,29 +19,35 @@ onready var goodLocationTimed = []
 onready var send_antenna = get_parent().get_parent().get_node("Send")
 onready var receive_antenna = get_parent().get_parent().get_node("Receive") # Just one small change! That was all I had t do!
 onready var timeDone = false
-onready var lagtimer = true
 
-func _ready():
-	randomize()
-	$Timer2.wait_time = rand_range(minTime,maxTime)
-	$Timer2.start()
-	yield($Timer2,"timeout")
-	me.position = send_antenna.position
-	timeDone = true
-	tweenFinished = true
-	print(timeDone)
+#func _ready():
+	#randomize()
+	#$Timer2.wait_time = rand_range(minTime,maxTime)
+	#$Timer2.start()
+	#yield($Timer2,"timeout")
+	#me.position = send_antenna.position
+	#timeDone = true
+	#tweenFinished = true
+	#print(timeDone)
 
 func _physics_process(delta):
+	if ProjectSettings.get_setting("Global/Stage") == 4 and makeitnotbouncewierdly:
+		me.position = send_antenna.position
+		timeDone = true
+		tweenFinished = true
+		print(timeDone)
+		makeitnotbouncewierdly = false
+		ihaveranoutofcreativefunctionnames()
 	if timeDone == true:
 		#print(timeDone) # WHYA RENT YOU WORKINGGGGGG YOU HAV EVERYTHING YOU NEED except set values. *inhale* *exhale*
-		if tweenFinished and lagtimer:
+		if tweenFinished:
 			#print(timeDone)
 			goodLocationTimed.clear() # Workes now.
 			if me.position.distance_to(receive_antenna.position) < distanceToProxy: # I HAD PUT SEND ANTNNA NOT RECEIVE AAAAAA
 				goodLocationTimed.append(receive_antenna.position)# WHAT ARE... ooooh i hadnt changed the variable name thats why its flying to the moon
 				tweenFinished = false
 				startTween(true)
-				#print("detected end server") #OK so its a problem with the IF stsement also note to self addd rop in wait time till drop in
+				print("detected end server") #OK so its a problem with the IF stsement also note to self addd rop in wait time till drop in
 				#end() 
 			else:
 				for i in 233:
@@ -47,7 +57,6 @@ func _physics_process(delta):
 						goodLocationTimed.append(nearestProxy.position)
 				tweenFinished = false
 				startTween(false)
-				fixlag()
 
 func startTween(isEnd):
 	if goodLocationTimed.size() > 0:
@@ -67,17 +76,21 @@ func startTween(isEnd):
 			tweenFinished = true
 
 func end(): # Original Values for ezport vars: 280, 3, 2, 5, 20, 50. ProjSet: 3000, 75. Countown timer: 2.5. Potential new bvalues (unutested): 100, 3, 1, 3, 10, 20, 	2500, 75	0.5
-	randomize()
-	ProjectSettings.set_setting("Global/Money", ProjectSettings.get_setting("Global/Money") + round(rand_range(minMoney,maxMoney)))
-	ProjectSettings.set_setting("Global/CustomerService", ProjectSettings.get_setting("Global/CustomerService") + round(rand_range(minSatisfaction,maxSatisfaction)))
+	#randomize()
+	#ProjectSettings.set_setting("Global/Money", ProjectSettings.get_setting("Global/Money") + round(rand_range(minMoney,maxMoney)))
+	#ProjectSettings.set_setting("Global/CustomerService", ProjectSettings.get_setting("Global/CustomerService") + round(rand_range(minSatisfaction,maxSatisfaction)))
 	# I JUST HAD AN IDEA! An infinite loop! 
 	# ToDONE: -Add customer satisfaction degredation, -add proxy cost, -add satisfaction cap, -add packet spawning, -add lose condition
-	me.position = send_antenna.position
-	if ProjectSettings.get_setting("Global/CustomerService") > 100:
-		ProjectSettings.set_setting("Global/CustomerService",100)
-	tweenFinished = true
+	#me.position = send_antenna.position
+	#if ProjectSettings.get_setting("Global/CustomerService") > 100:
+	#	ProjectSettings.set_setting("Global/CustomerService",100)
+	#tweenFinished = true
+	ProjectSettings.set_setting("Global/FBIDone",true)
+	self.queue_free()
 
-func fixlag():
+func ihaveranoutofcreativefunctionnames():
 	$Timer3.start()
 	yield($Timer3,"timeout")
-	lagtimer = true
+	ProjectSettings.set_setting("Global/Money",ProjectSettings.get_setting("Global/Money") - 500)
+	ProjectSettings.set_setting("Global/CustomerService",round(ProjectSettings.get_setting("Global/CustomerService") / 2))
+	self.queue_free()

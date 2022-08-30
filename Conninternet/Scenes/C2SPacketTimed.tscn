@@ -15,3 +15,6 @@ script = ExtResource( 1 )
 wait_time = 3.0
 
 [node name="Timer2" type="Timer" parent="."]
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 1.5

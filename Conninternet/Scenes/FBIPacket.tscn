@@ -1,14 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/C2SPacketTimed.gd" type="Script" id=1]
-[ext_resource path="res://Resources/S2C.png" type="Texture" id=2]
+[ext_resource path="res://Resources/FBI.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/FBIPacket.gd" type="Script" id=2]
 
-[node name="S2CPacketTimed" type="Sprite"]
+[node name="FBIPacket" type="Sprite"]
 position = Vector2( 0, -1 )
 scale = Vector2( 4, 4 )
-texture = ExtResource( 2 )
-script = ExtResource( 1 )
-maxTime = 200
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]
 
@@ -18,3 +17,4 @@ wait_time = 3.0
 [node name="Timer2" type="Timer" parent="."]
 
 [node name="Timer3" type="Timer" parent="."]
+wait_time = 15.0

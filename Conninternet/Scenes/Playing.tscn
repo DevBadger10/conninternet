@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Proxy Server.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Playing.gd" type="Script" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Scenes/S2CPacketTimed.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/MalisousPacket.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Resources/FBI.png" type="Texture" id=17]
+[ext_resource path="res://Scenes/FBIPacket.tscn" type="PackedScene" id=18]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
@@ -566,48 +567,48 @@ text = "Quit"
 [node name="C2S 1" parent="Packets" instance=ExtResource( 10 )]
 position = Vector2( 819, 66 )
 waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
+minSatisfaction = 1
+maxSatisfaction = 2
 minMoney = 20
 maxMoney = 50
 
 [node name="C2S 2" parent="Packets" instance=ExtResource( 10 )]
 position = Vector2( 563, 66 )
 waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
+minSatisfaction = 1
+maxSatisfaction = 2
 minMoney = 20
 maxMoney = 50
 
 [node name="C2S 3" parent="Packets" instance=ExtResource( 10 )]
 position = Vector2( 947, 210 )
 waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
+minSatisfaction = 1
+maxSatisfaction = 2
 minMoney = 20
 maxMoney = 50
 
 [node name="C2S 4" parent="Packets" instance=ExtResource( 10 )]
 position = Vector2( 691, 66 )
 waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
+minSatisfaction = 1
+maxSatisfaction = 2
 minMoney = 20
 maxMoney = 50
 
 [node name="C2S 5" parent="Packets" instance=ExtResource( 10 )]
 position = Vector2( 947, 338 )
 waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
+minSatisfaction = 1
+maxSatisfaction = 2
 minMoney = 20
 maxMoney = 50
 
 [node name="C2S 6" parent="Packets" instance=ExtResource( 10 )]
 position = Vector2( 947, 66 )
 waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
+minSatisfaction = 1
+maxSatisfaction = 2
 minMoney = 20
 maxMoney = 50
 
@@ -629,7 +630,7 @@ position = Vector2( -608, 95 )
 distanceToProxy = 250
 waitTime = 3
 minSatisfaction = 5
-maxSatisfaction = 7
+maxSatisfaction = 5
 minMoney = 50
 maxMoney = 75
 
@@ -638,7 +639,7 @@ position = Vector2( -608, 95 )
 distanceToProxy = 250
 waitTime = 3
 minSatisfaction = 5
-maxSatisfaction = 7
+maxSatisfaction = 5
 minMoney = 50
 maxMoney = 75
 
@@ -647,7 +648,7 @@ position = Vector2( -608, 95 )
 distanceToProxy = 250
 waitTime = 3
 minSatisfaction = 5
-maxSatisfaction = 7
+maxSatisfaction = 5
 minMoney = 50
 maxMoney = 75
 
@@ -656,45 +657,34 @@ position = Vector2( -608, 95 )
 distanceToProxy = 250
 waitTime = 3
 minSatisfaction = 5
-maxSatisfaction = 7
+maxSatisfaction = 5
 minMoney = 50
 maxMoney = 75
 
 [node name="MaliscousPacket" parent="Packets" instance=ExtResource( 16 )]
 position = Vector2( -576, 63 )
 distanceToProxy = 380
-minSatisfaction = -10
-maxSatisfaction = -20
+minSatisfaction = -5
+maxSatisfaction = -15
 maxTime = 130
 
 [node name="MaliscousPacket2" parent="Packets" instance=ExtResource( 16 )]
 position = Vector2( -576, 63 )
 distanceToProxy = 380
-minSatisfaction = -10
-maxSatisfaction = -20
+minSatisfaction = -5
+maxSatisfaction = -10
 maxTime = 130
 
-[node name="MaliscousPacket3" parent="Packets" instance=ExtResource( 16 )]
-position = Vector2( -576, 63 )
-distanceToProxy = 380
-minSatisfaction = -10
-maxSatisfaction = -20
-maxTime = 130
-
-[node name="MaliscousPacket4" parent="Packets" instance=ExtResource( 16 )]
-position = Vector2( -576, 63 )
-distanceToProxy = 380
-minSatisfaction = -10
-maxSatisfaction = -20
-minTime = 130
-maxTime = 130
+[node name="FBIPacket" parent="Packets" instance=ExtResource( 18 )]
+position = Vector2( -400, 175 )
+distanceToProxy = 250
 
 [node name="Client to Server Packet2" parent="Packets" instance=ExtResource( 14 )]
 position = Vector2( -608, 63 )
 distanceToProxy = 280
 waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
+minSatisfaction = 1
+maxSatisfaction = 2
 minMoney = 20
 maxMoney = 50
 minTime = 10
@@ -704,8 +694,8 @@ maxTime = 20
 position = Vector2( -608, 63 )
 distanceToProxy = 280
 waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
+minSatisfaction = 1
+maxSatisfaction = 2
 minMoney = 20
 maxMoney = 50
 minTime = 10
@@ -715,8 +705,8 @@ maxTime = 20
 position = Vector2( -608, 63 )
 distanceToProxy = 280
 waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
+minSatisfaction = 1
+maxSatisfaction = 2
 minMoney = 20
 maxMoney = 50
 minTime = 10
@@ -726,8 +716,8 @@ maxTime = 20
 position = Vector2( -608, 63 )
 distanceToProxy = 280
 waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
+minSatisfaction = 1
+maxSatisfaction = 2
 minMoney = 20
 maxMoney = 50
 minTime = 60
@@ -737,8 +727,8 @@ maxTime = 90
 position = Vector2( -608, 63 )
 distanceToProxy = 280
 waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
+minSatisfaction = 1
+maxSatisfaction = 2
 minMoney = 20
 maxMoney = 50
 minTime = 60
@@ -748,8 +738,8 @@ maxTime = 90
 position = Vector2( -608, 63 )
 distanceToProxy = 280
 waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
+minSatisfaction = 1
+maxSatisfaction = 2
 minMoney = 20
 maxMoney = 50
 minTime = 60
@@ -801,7 +791,7 @@ scale = Vector2( 3.5, 3.5 )
 texture = ExtResource( 13 )
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 1.25
 
 [node name="LoseText" type="RichTextLabel" parent="."]
 visible = false
@@ -840,6 +830,12 @@ color = Color( 0.141176, 0.392157, 0.745098, 1 )
 [node name="WaveHandler" type="Node" parent="."]
 
 [node name="Timer" type="Timer" parent="WaveHandler"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -624.0
+margin_top = 47.0
+margin_right = -560.0
+margin_bottom = 111.0
 
 [node name="Fbi" type="Sprite" parent="."]
 position = Vector2( -576, 95 )

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/C2SPacketTimed.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/MalicousPacket.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Mal.png" type="Texture" id=2]
 
 [node name="MaliscousPacket" type="Sprite"]
@@ -8,14 +8,6 @@ position = Vector2( 0, -1 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 script = ExtResource( 1 )
-distanceToProxy = 300
-waitTime = 3
-minSatisfaction = -5
-maxSatisfaction = -10
-minMoney = -10
-maxMoney = -20
-minTime = 120
-maxTime = 1000
 
 [node name="Tween" type="Tween" parent="."]
 

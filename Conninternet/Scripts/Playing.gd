@@ -52,6 +52,10 @@ func _physics_process(delta):
 				$Labels/Smiley.texture_normal = load("res://Resources/Neutral.png")
 			makethegamenotlag = 1
 			reset_lag()
+		if ProjectSettings.get_setting("Global/CustomerService") == 0 or ProjectSettings.get_setting("Global/CustomerService") < 0:
+			$LoseText.visible = true
+			$PleaseQuit.visible = true
+			get_tree().paused = true
 			#print("reset lag triggered")
 		#print(get_viewport().get_mouse_position().y)
 
@@ -65,10 +69,8 @@ func _input(event):
 			ProjectSettings.set_setting("Global/Money",999999999)
 	if Input.is_action_pressed("dev_satisfaction"):
 			ProjectSettings.set_setting("Global/CustomerService",100)
-	if ProjectSettings.get_setting("Global/CustomerService") == 0:
-			$LoseText.visible = true
-			$PleaseQuit.visible = true
-			get_tree().paused = true
+	if Input.is_action_pressed("dev_summonfbi"):
+			ProjectSettings.set_setting("Global/Stage", 4)
 
 func _on_AddButton_pressed():
 	ProjectSettings.set_setting("Global/Mode", "create")
@@ -114,13 +116,13 @@ func wavehandler():
 	$WaveHandler/Timer.wait_time = 90
 	$WaveHandler/Timer.start()
 	yield($WaveHandler/Timer,"timeout")
-	ProjectSettings.set_setting("Global/Stage",2)
-	$Timer2.wait_time = 2
+	ProjectSettings.set_setting("Global/Stage",2) # I made satisfaction more rare to up the difficulty
+	$Timer2.wait_time = 1
 	$WaveHandler/Timer.wait_time = 30
 	$WaveHandler/Timer.start()
 	yield($WaveHandler/Timer,"timeout")
 	ProjectSettings.set_setting("Global/Stage",3)
-	$Timer2.wait_time = 1.85
+	$Timer2.wait_time = 0.9
 	$WaveHandler/Timer.wait_time = 30
 	$WaveHandler/Timer.start()
 	yield($WaveHandler/Timer,"timeout")
@@ -129,4 +131,4 @@ func wavehandler():
 	$WaveHandler/Timer.start()
 	yield($WaveHandler/Timer,"timeout")
 	ProjectSettings.set_setting("Global/Stage",5)
-	$Timer2.wait_time = 1
+	$Timer2.wait_time = 0.5

@@ -65,7 +65,7 @@ If you don't want a proxy server to have packets going to it, then you can turn 
 
 When you buy a proxy. you spend $300. When you remove it from the network with the Delete tool, you don't get that money back.
 
-The Customer Satisfaction is important. It's capped at 100 and if it reaches 0 you lose."
+The Customer Satisfaction is important. It's capped at 100 and if it reaches 0 you lose. Get more by delivering packets."
 scroll_active = false
 
 [node name="C2s" type="Sprite" parent="."]

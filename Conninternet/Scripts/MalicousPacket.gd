@@ -15,7 +15,6 @@ onready var goodLocationTimed = []
 onready var send_antenna = get_parent().get_parent().get_node("Send")
 onready var receive_antenna = get_parent().get_parent().get_node("Receive") # Just one small change! That was all I had t do!
 onready var timeDone = false
-onready var lagtimer = true
 
 func _ready():
 	randomize()
@@ -28,16 +27,26 @@ func _ready():
 	print(timeDone)
 
 func _physics_process(delta):
+	if ProjectSettings.get_setting("Global/FBIDone"):
+			#get_tree().queue_delete(self)
+			self.queue_free() # This is cleaner.
+	if ProjectSettings.get_setting("Global/Stage") == 4 and not timeDone:
+		$Timer2.stop()
+		me.position = send_antenna.position
+		timeDone = true
+		tweenFinished = true
+		print(timeDone)
 	if timeDone == true:
 		#print(timeDone) # WHYA RENT YOU WORKINGGGGGG YOU HAV EVERYTHING YOU NEED except set values. *inhale* *exhale*
-		if tweenFinished and lagtimer:
+		
+		if tweenFinished:
 			#print(timeDone)
 			goodLocationTimed.clear() # Workes now.
 			if me.position.distance_to(receive_antenna.position) < distanceToProxy: # I HAD PUT SEND ANTNNA NOT RECEIVE AAAAAA
 				goodLocationTimed.append(receive_antenna.position)# WHAT ARE... ooooh i hadnt changed the variable name thats why its flying to the moon
 				tweenFinished = false
 				startTween(true)
-				#print("detected end server") #OK so its a problem with the IF stsement also note to self addd rop in wait time till drop in
+				print("detected end server") #OK so its a problem with the IF stsement also note to self addd rop in wait time till drop in
 				#end() 
 			else:
 				for i in 233:
@@ -47,7 +56,6 @@ func _physics_process(delta):
 						goodLocationTimed.append(nearestProxy.position)
 				tweenFinished = false
 				startTween(false)
-				fixlag()
 
 func startTween(isEnd):
 	if goodLocationTimed.size() > 0:
@@ -76,8 +84,3 @@ func end(): # Original Values for ezport vars: 280, 3, 2, 5, 20, 50. ProjSet: 30
 	if ProjectSettings.get_setting("Global/CustomerService") > 100:
 		ProjectSettings.set_setting("Global/CustomerService",100)
 	tweenFinished = true
-
-func fixlag():
-	$Timer3.start()
-	yield($Timer3,"timeout")
-	lagtimer = true
