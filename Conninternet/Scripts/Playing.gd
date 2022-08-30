@@ -54,16 +54,18 @@ func _physics_process(delta):
 			reset_lag()
 			#print("reset lag triggered")
 		#print(get_viewport().get_mouse_position().y)
-		if Input.is_action_just_pressed("left_click"):
+
+func _input(event):
+	if Input.is_action_just_pressed("left_click"):
 			startClick()
-		if Input.is_action_pressed("dev_all"):
+	if Input.is_action_pressed("dev_all"):
 			ProjectSettings.set_setting("Global/Money",999999999)
 			ProjectSettings.set_setting("Global/CustomerService",100)
-		if Input.is_action_pressed("dev_money"):
+	if Input.is_action_pressed("dev_money"):
 			ProjectSettings.set_setting("Global/Money",999999999)
-		if Input.is_action_pressed("dev_satisfaction"):
+	if Input.is_action_pressed("dev_satisfaction"):
 			ProjectSettings.set_setting("Global/CustomerService",100)
-		if ProjectSettings.get_setting("Global/CustomerService") == 0:
+	if ProjectSettings.get_setting("Global/CustomerService") == 0:
 			$LoseText.visible = true
 			$PleaseQuit.visible = true
 			get_tree().paused = true

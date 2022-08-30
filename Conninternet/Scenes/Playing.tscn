@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Proxy Server.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Playing.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Resources/ReceiveAntennaVersion2.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/C2SPacketTimed.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/S2CPacketTimed.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/MalisousPacket.tscn" type="PackedScene" id=16]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
@@ -640,132 +641,6 @@ maxSatisfaction = 7
 minMoney = 50
 maxMoney = 75
 
-[node name="S2CPacketTimed3" parent="Packets" instance=ExtResource( 15 )]
-position = Vector2( -592, 15 )
-distanceToProxy = 250
-waitTime = 3
-minSatisfaction = 5
-maxSatisfaction = 7
-minMoney = 50
-maxMoney = 75
-
-[node name="S2CPacketTimed4" parent="Packets" instance=ExtResource( 15 )]
-position = Vector2( -592, 15 )
-distanceToProxy = 250
-waitTime = 3
-minSatisfaction = 5
-maxSatisfaction = 7
-minMoney = 50
-maxMoney = 75
-
-[node name="S2CPacketTimed5" parent="Packets" instance=ExtResource( 15 )]
-position = Vector2( -592, 15 )
-distanceToProxy = 250
-waitTime = 3
-minSatisfaction = 5
-maxSatisfaction = 7
-minMoney = 50
-maxMoney = 75
-
-[node name="S2CPacketTimed6" parent="Packets" instance=ExtResource( 15 )]
-position = Vector2( -592, 15 )
-distanceToProxy = 250
-waitTime = 3
-minSatisfaction = 5
-maxSatisfaction = 7
-minMoney = 50
-maxMoney = 75
-
-[node name="S2CPacketTimed7" parent="Packets" instance=ExtResource( 15 )]
-position = Vector2( -592, 15 )
-distanceToProxy = 250
-waitTime = 3
-minSatisfaction = 5
-maxSatisfaction = 7
-minMoney = 50
-maxMoney = 75
-
-[node name="S2CPacketTimed8" parent="Packets" instance=ExtResource( 15 )]
-position = Vector2( -592, 15 )
-distanceToProxy = 250
-waitTime = 3
-minSatisfaction = 5
-maxSatisfaction = 7
-minMoney = 50
-maxMoney = 75
-
-[node name="S2CPacketTimed9" parent="Packets" instance=ExtResource( 15 )]
-position = Vector2( -592, 15 )
-distanceToProxy = 250
-waitTime = 3
-minSatisfaction = 5
-maxSatisfaction = 7
-minMoney = 50
-maxMoney = 75
-
-[node name="S2CPacketTimed10" parent="Packets" instance=ExtResource( 15 )]
-position = Vector2( -592, 15 )
-distanceToProxy = 250
-waitTime = 3
-minSatisfaction = 5
-maxSatisfaction = 7
-minMoney = 50
-maxMoney = 75
-
-[node name="S2CPacketTimed11" parent="Packets" instance=ExtResource( 15 )]
-position = Vector2( -592, 15 )
-distanceToProxy = 250
-waitTime = 3
-minSatisfaction = 5
-maxSatisfaction = 7
-minMoney = 50
-maxMoney = 75
-
-[node name="S2CPacketTimed12" parent="Packets" instance=ExtResource( 15 )]
-position = Vector2( -592, 15 )
-distanceToProxy = 250
-waitTime = 3
-minSatisfaction = 5
-maxSatisfaction = 7
-minMoney = 50
-maxMoney = 75
-
-[node name="S2CPacketTimed13" parent="Packets" instance=ExtResource( 15 )]
-position = Vector2( -592, 15 )
-distanceToProxy = 250
-waitTime = 3
-minSatisfaction = 5
-maxSatisfaction = 7
-minMoney = 50
-maxMoney = 75
-
-[node name="S2CPacketTimed14" parent="Packets" instance=ExtResource( 15 )]
-position = Vector2( -592, 15 )
-distanceToProxy = 250
-waitTime = 3
-minSatisfaction = 5
-maxSatisfaction = 7
-minMoney = 50
-maxMoney = 75
-
-[node name="S2CPacketTimed15" parent="Packets" instance=ExtResource( 15 )]
-position = Vector2( -592, 15 )
-distanceToProxy = 250
-waitTime = 3
-minSatisfaction = 5
-maxSatisfaction = 7
-minMoney = 50
-maxMoney = 75
-
-[node name="S2CPacketTimed16" parent="Packets" instance=ExtResource( 15 )]
-position = Vector2( -592, 15 )
-distanceToProxy = 250
-waitTime = 3
-minSatisfaction = 5
-maxSatisfaction = 7
-minMoney = 50
-maxMoney = 75
-
 [node name="S2CPacketTimed17" parent="Packets" instance=ExtResource( 15 )]
 position = Vector2( -592, 15 )
 distanceToProxy = 250
@@ -784,14 +659,18 @@ maxSatisfaction = 7
 minMoney = 50
 maxMoney = 75
 
-[node name="S2CPacketTimed19" parent="Packets" instance=ExtResource( 15 )]
-position = Vector2( -592, 15 )
-distanceToProxy = 250
-waitTime = 3
-minSatisfaction = 5
-maxSatisfaction = 7
-minMoney = 50
-maxMoney = 75
+[node name="MaliscousPacket" parent="Packets" instance=ExtResource( 16 )]
+maxTime = 130
+
+[node name="MaliscousPacket2" parent="Packets" instance=ExtResource( 16 )]
+maxTime = 130
+
+[node name="MaliscousPacket3" parent="Packets" instance=ExtResource( 16 )]
+maxTime = 130
+
+[node name="MaliscousPacket4" parent="Packets" instance=ExtResource( 16 )]
+minTime = 130
+maxTime = 130
 
 [node name="Client to Server Packet2" parent="Packets" instance=ExtResource( 14 )]
 position = Vector2( -592, -17 )
@@ -815,7 +694,7 @@ maxMoney = 50
 minTime = 10
 maxTime = 20
 
-[node name="Client to Server Packet4" parent="Packets" instance=ExtResource( 14 )]
+[node name="Client to Server Packet5" parent="Packets" instance=ExtResource( 14 )]
 position = Vector2( -592, -17 )
 distanceToProxy = 280
 waitTime = 3
@@ -826,152 +705,6 @@ maxMoney = 50
 minTime = 10
 maxTime = 20
 
-[node name="Client to Server Packet5" parent="Packets" instance=ExtResource( 14 )]
-position = Vector2( -592, -17 )
-distanceToProxy = 280
-waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
-minMoney = 20
-maxMoney = 50
-minTime = 30
-maxTime = 90
-
-[node name="Client to Server Packet6" parent="Packets" instance=ExtResource( 14 )]
-position = Vector2( -592, -17 )
-distanceToProxy = 280
-waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
-minMoney = 20
-maxMoney = 50
-minTime = 30
-maxTime = 90
-
-[node name="Client to Server Packet7" parent="Packets" instance=ExtResource( 14 )]
-position = Vector2( -592, -17 )
-distanceToProxy = 280
-waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
-minMoney = 20
-maxMoney = 50
-minTime = 30
-maxTime = 90
-
-[node name="Client to Server Packet8" parent="Packets" instance=ExtResource( 14 )]
-position = Vector2( -592, -17 )
-distanceToProxy = 280
-waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
-minMoney = 20
-maxMoney = 50
-minTime = 30
-maxTime = 90
-
-[node name="Client to Server Packet21" parent="Packets" instance=ExtResource( 14 )]
-position = Vector2( -592, -17 )
-distanceToProxy = 280
-waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
-minMoney = 20
-maxMoney = 50
-minTime = 30
-maxTime = 90
-
-[node name="Client to Server Packet9" parent="Packets" instance=ExtResource( 14 )]
-position = Vector2( -592, -17 )
-distanceToProxy = 280
-waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
-minMoney = 20
-maxMoney = 50
-minTime = 30
-maxTime = 90
-
-[node name="Client to Server Packet10" parent="Packets" instance=ExtResource( 14 )]
-position = Vector2( -592, -17 )
-distanceToProxy = 280
-waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
-minMoney = 20
-maxMoney = 50
-maxTime = 111
-
-[node name="Client to Server Packet11" parent="Packets" instance=ExtResource( 14 )]
-position = Vector2( -592, -17 )
-distanceToProxy = 280
-waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
-minMoney = 20
-maxMoney = 50
-maxTime = 111
-
-[node name="Client to Server Packet12" parent="Packets" instance=ExtResource( 14 )]
-position = Vector2( -592, -17 )
-distanceToProxy = 280
-waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
-minMoney = 20
-maxMoney = 50
-maxTime = 111
-
-[node name="Client to Server Packet13" parent="Packets" instance=ExtResource( 14 )]
-position = Vector2( -592, -17 )
-distanceToProxy = 280
-waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
-minMoney = 20
-maxMoney = 50
-maxTime = 111
-
-[node name="Client to Server Packet14" parent="Packets" instance=ExtResource( 14 )]
-position = Vector2( -592, -17 )
-distanceToProxy = 280
-waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
-minMoney = 20
-maxMoney = 50
-maxTime = 111
-
-[node name="Client to Server Packet15" parent="Packets" instance=ExtResource( 14 )]
-position = Vector2( -592, -17 )
-distanceToProxy = 280
-waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
-minMoney = 20
-maxMoney = 50
-maxTime = 111
-
-[node name="Client to Server Packet16" parent="Packets" instance=ExtResource( 14 )]
-position = Vector2( -592, -17 )
-distanceToProxy = 280
-waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
-minMoney = 20
-maxMoney = 50
-maxTime = 111
-
-[node name="Client to Server Packet17" parent="Packets" instance=ExtResource( 14 )]
-position = Vector2( -592, -17 )
-distanceToProxy = 280
-waitTime = 3
-minSatisfaction = 2
-maxSatisfaction = 5
-minMoney = 20
-maxMoney = 50
-maxTime = 111
-
 [node name="Client to Server Packet18" parent="Packets" instance=ExtResource( 14 )]
 position = Vector2( -592, -17 )
 distanceToProxy = 280
@@ -980,7 +713,8 @@ minSatisfaction = 2
 maxSatisfaction = 5
 minMoney = 20
 maxMoney = 50
-maxTime = 111
+minTime = 60
+maxTime = 90
 
 [node name="Client to Server Packet19" parent="Packets" instance=ExtResource( 14 )]
 position = Vector2( -592, -17 )
@@ -990,7 +724,8 @@ minSatisfaction = 2
 maxSatisfaction = 5
 minMoney = 20
 maxMoney = 50
-maxTime = 111
+minTime = 60
+maxTime = 90
 
 [node name="Client to Server Packet20" parent="Packets" instance=ExtResource( 14 )]
 position = Vector2( -592, -17 )
@@ -1000,7 +735,8 @@ minSatisfaction = 2
 maxSatisfaction = 5
 minMoney = 20
 maxMoney = 50
-maxTime = 111
+minTime = 60
+maxTime = 90
 
 [node name="Labels" type="Node" parent="."]
 
