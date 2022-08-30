@@ -53,7 +53,9 @@ text = "Conninternet Training
 
 After we are an established company, we will get to be well known. People will trust us... and hackers will try to destroy that. They will send malicous packets that harm our brand name. 
 
-It will also cost a bit for Legal to fix it all up. Sometimes, they try to DoS or DDoS someone, which means sending a bunch of malicous packets at the same time. At that point, it's worth it to just close down the entire network."
+It will also cost a bit for Legal to fix it all up. Sometimes, they try to DoS or DDoS someone, which means sending a bunch of malicous packets at the same time. At that point, it's worth it to just close down the entire network.
+
+Also; a note. The packets will continue coming in the event of a DDoS, so you might want to find a way to exile them to a proxy server. Our research shows they have a much higher range than other packets. They also get deleted once the FBI packet goes through. They have an extremely negative impact on Satisfaction, so be wary of that."
 scroll_active = false
 
 [node name="C2s" type="Sprite" parent="."]

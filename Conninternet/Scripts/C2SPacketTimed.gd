@@ -27,25 +27,25 @@ func _ready():
 	print(timeDone)
 
 func _physics_process(delta):
-#if timeDone == true:
-	#print(timeDone) # WHYA RENT YOU WORKINGGGGGG YOU HAV EVERYTHING YOU NEED except set values. *inhale* *exhale*
-	if tweenFinished:
-		#print(timeDone)
-		goodLocationTimed.clear() # Workes now.
-		if me.position.distance_to(receive_antenna.position) < distanceToProxy: # I HAD PUT SEND ANTNNA NOT RECEIVE AAAAAA
-			goodLocationTimed.append(receive_antenna.position)# WHAT ARE... ooooh i hadnt changed the variable name thats why its flying to the moon
-			tweenFinished = false
-			startTween(true)
-			print("detected end server") #OK so its a problem with the IF stsement also note to self addd rop in wait time till drop in
-			#end() 
-		else:
-			for i in 233:
-				nearestProxy = get_parent().get_parent().get_node("Proxy Servers/ProxyServer"+str(i))
-				if me.position.distance_to(nearestProxy.position) < distanceToProxy and nearestProxy.power: # I used the wrong </> here. AAAAAAAAAAAAAAAAAa
-						#print(i)
-					goodLocationTimed.append(nearestProxy.position)
-			tweenFinished = false
-			startTween(false)
+	if timeDone == true:
+		#print(timeDone) # WHYA RENT YOU WORKINGGGGGG YOU HAV EVERYTHING YOU NEED except set values. *inhale* *exhale*
+		if tweenFinished:
+			#print(timeDone)
+			goodLocationTimed.clear() # Workes now.
+			if me.position.distance_to(receive_antenna.position) < distanceToProxy: # I HAD PUT SEND ANTNNA NOT RECEIVE AAAAAA
+				goodLocationTimed.append(receive_antenna.position)# WHAT ARE... ooooh i hadnt changed the variable name thats why its flying to the moon
+				tweenFinished = false
+				startTween(true)
+				print("detected end server") #OK so its a problem with the IF stsement also note to self addd rop in wait time till drop in
+				#end() 
+			else:
+				for i in 233:
+					nearestProxy = get_parent().get_parent().get_node("Proxy Servers/ProxyServer"+str(i))
+					if me.position.distance_to(nearestProxy.position) < distanceToProxy and nearestProxy.power: # I used the wrong </> here. AAAAAAAAAAAAAAAAAa
+							#print(i)
+						goodLocationTimed.append(nearestProxy.position)
+				tweenFinished = false
+				startTween(false)
 
 func startTween(isEnd):
 	if goodLocationTimed.size() > 0:
